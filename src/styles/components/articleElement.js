@@ -1,72 +1,47 @@
 // import {StyleSheet} from "react-native";
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-export const LoginUserInput = EStyleSheet.create({
-    container: {
-        width: '70%',
-        height: '3.438rem',
-        // height: 55,
-        borderBottomColor: '#000',
-        borderBottomWidth: 1,
-        marginTop: '1.25rem',
-        justifyContent: 'flex-start'
-    },
+export const ArticlesElementStyle = EStyleSheet.create({
+    elementContainer: {
 
-    containerNew:{
-        width: '18.88rem',
-        height: '4.538rem',
-        backgroundColor: '#fff',
-        // height: 55,
-        borderColor: '#000',
-        borderWidth: 1,
-        borderRadius: '0.55rem',
+        alignItems: 'flex-start',
+        width:'100%',
+        height:120,
         justifyContent: 'flex-start',
-        marginTop: 0,
+        flexDirection:'row',
+        margin:'0.7rem',
     },
+    elementIconContainer: {
+        alignItems: 'center',
+        width:'5%',
+        height:'100%',
+        justifyContent: 'center',
+    },
+    elementTitleContainer: {
+        paddingLeft:'0.7rem',
 
+        alignItems: 'flex-start',
+        width:'45%',
+        height:'100%',
+    },
+    elementDescriptionContainer: {
+        alignItems: 'flex-end',
+        width:'30%',
+        height:'100%',
+    },
+    elementTitleText: {
+        fontSize:'0.8rem'
+    },
+    elementDescriptionText: {
+        fontSize:'0.8rem'
+    },
+    elementImageContainer: {
+        alignSelf:'flex-start',
+        alignItems:'center',
+        justifyContent: 'center',
+        width: '4.7rem',
+        height: '4.7rem',
+        borderRadius:'2.35rem'
 
-    containerInputGroup: {
-        position:'relative',
-        width: '100%',
-        height: '100%',
-        flex: 1,
-        flexDirection: 'row',
-
-    },
-    textError:{
-        position:'absolute',
-        left: 0,
-        bottom: '-0.9375rem',
-        color: 'red',
-        fontSize: '0.625rem',
-    },
-    containerInputGroupInput: {
-        flex: 2,
-
-
-    },
-    containerInputGroupRemember: {
-        flex: 1,
-        justifyContent: 'flex-end',
-        paddingBottom: '0.625rem',
-        alignItems: 'flex-end'
-    },
-    containerInputGroupRememberLabel: {
-        color: 'rgb(102, 102, 102)',
-        fontSize: '0.625rem'
-    },
-    labelText: {
-        color: 'rgb(102, 102, 102)',
-        fontSize: '0.75rem',
-    },
-    textInput: {
-        fontSize: '1.575rem',
-        marginTop: '1.125rem',
-        marginLeft: '0.725rem',
-        color: '#000',
-        // fontWeight: 'bold'
-    },
-    textInputName:{
-        // marginTop: 20,
     }
 });

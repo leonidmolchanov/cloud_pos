@@ -1,14 +1,16 @@
 // import {StyleSheet} from "react-native";
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-export const FilterDblInputStyle = EStyleSheet.create({
+export const FilterZeroSliderStyle = EStyleSheet.create({
     container: {
         width:'100%',
-        height:80
+        height:'4.2rem',
+        paddingTop:'1.4rem',
+        flex:1,
+        flexDirection:'row'
     },
     headContainer: {
-        width:'100%',
-        height:'40%'
+        width:'80%'
     },
     headLabelText: {
         fontWeight:'bold',
@@ -16,21 +18,6 @@ export const FilterDblInputStyle = EStyleSheet.create({
 
     },
     bodyContainer: {
-        width:'100%',
-        flex:1,
-        height:'60%',
-        flexDirection:'row'
-    },
-    bodyLeftContainer: {
-        width:'50%',
-        height:'100%',
-        paddingRight:20
-    },
-    bodyLeftContainerInputStyle: {
-        color:'#666'
-    },
-    bodyRightContainer: {
-        width:'50%',
-        height:'100%'
-    },
+        width:'20%'
+    }
 });

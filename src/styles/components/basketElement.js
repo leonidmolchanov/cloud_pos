@@ -6,16 +6,19 @@ export const BasketElementStyle = EStyleSheet.create({
 
         alignItems: 'flex-start',
         width:'100%',
-        height:120,
+        height:'4rem',
         justifyContent: 'flex-start',
         flexDirection:'row',
-        margin:0
+        marginBottom:'3rem'
     },
+
     elementIconContainer: {
         alignItems: 'center',
         width:'5%',
         height:'100%',
         justifyContent: 'center',
+        marginRight:'0.7rem',
+
     },
     elementTitleContainer: {
         alignItems: 'flex-start',
@@ -24,24 +27,25 @@ export const BasketElementStyle = EStyleSheet.create({
     },
     elementDescriptionContainer: {
         alignItems: 'flex-end',
-        width:'25%',
+        width:'15%',
         height:'100%',
     },
     elementTitleText: {
-        fontSize:15,
+        fontSize:'0.8rem',
         fontWeight: 'normal'
     },
     elementTitleTextBold: {
-        fontSize:15,
+        fontSize:'0.8rem',
         fontWeight: 'bold'
     },
     elementDescriptionText: {
-        fontSize:16
+        fontSize:'0.8rem'
     },
     elementImageContainer: {
         alignItems:'center',
         justifyContent: 'center',
-        width: 50,
-        height: 50
+        width: '4.7rem',
+        height: '4.7rem',
+        borderRadius:'2.35rem'
     }
 });

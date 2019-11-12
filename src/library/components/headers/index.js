@@ -1,10 +1,11 @@
 import React from "react";
 import {TouchableOpacity, Image} from 'react-native'
 import {Header} from 'react-native-elements'
-import {UserIcon, BackIcon} from "../../icons";
+import {UserIcon, BackIcon, FilterIcon} from "../../icons";
 import SmsHeader from './sms.component'
 import {HeaderStyle, ScreenSummary} from './../../../styles'
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { Icon } from 'react-native-elements'
 
 export default class GlobalHeader extends React.Component {
     constructor(props) {
@@ -18,34 +19,35 @@ export default class GlobalHeader extends React.Component {
                 containerStyle={HeaderStyle.containerStyle}
                 leftContainerStyle={HeaderStyle.userIcon}
                 rightContainerStyle={HeaderStyle.chatIcon}
-                leftComponent={
-                    navigator.state.routeName === 'profile' || navigator.state.routeName === 'chat' ?
-                        <TouchableOpacity onPress={() => {
+                leftComponent={ this.props.leftIcon ?
+                        <TouchableOpacity style={{width:36, height:36}} onPress={() => {
+                            this.props.goBack ?
+                                this.props.goBack()
+                                :
                             navigator.goBack(null)
                         }}>
-                            < BackIcon width={50} height={50} x={0} y={0} viewBox={"0 0 180 180"} fill={"#000"}/>
-                        </TouchableOpacity>
+                            <Icon
+                                name='angle-left'
+                                type='font-awesome'
+                                color='#000'
+                                size={36}
+                            />
 
-                        :
-                        <TouchableOpacity onPress={() => {
-                            navigator.navigate('profile')
-                        }}>
-
-                            < UserIcon width={1.875*EStyleSheet.value('$remJsx')} height={1.875*EStyleSheet.value('$remJsx')} x={0} y={0} viewBox={"0 0 100 100"} fill={"#000"}/>
                         </TouchableOpacity>
+                    :
+                    false
+
                 }
                 centerComponent={{text: this.props.title, style: HeaderStyle.centerComponentStyle}}
-                rightComponent={
+                rightComponent={this.props.rightIcon ?
                     <TouchableOpacity onPress={() => {
-                        navigator.navigate('chat')
+                        navigator.navigate('filter')
+
                     }}>
-
-
-                        {/*<SmsHeader width={3.6*EStyleSheet.value('$remJsx')} height={3.2*EStyleSheet.value('$remJsx')} x={20} y={20} bundle={43} viewBox={"0 0 100 100"}*/}
-                        <SmsHeader width={2*EStyleSheet.value('$remJsx')} height={1.8*EStyleSheet.value('$remJsx')} x={10} y={10} bundle={43} viewBox={"0 0 100 100"}
-                                   fill={"#000"}/>
-                    </TouchableOpacity>}
-
+                        < FilterIcon width={50} height={50} x={0} y={15} viewBox={"0 0 50 50"} fill={"#000"}/>
+                    </TouchableOpacity>
+: false
+                }
             />
         )
 

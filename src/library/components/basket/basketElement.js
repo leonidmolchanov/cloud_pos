@@ -1,37 +1,76 @@
 import React from "react";
 import {TouchableOpacity, Image, View, Text} from 'react-native'
 import {FilterIcon} from "../../icons";
-import {ArticlesElementStyle} from "../../../styles";
+import {BasketElementStyle} from "../../../styles";
 import { Button, Input } from 'nachos-ui'
+import { Icon } from 'react-native-elements'
+import {DeleteBasket} from './../../../action'
 
-export  class ArticleElement extends React.Component {
+export  class BasketElement extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <View style={ArticlesElementStyle.elementContainer}>
+            <View style={BasketElementStyle.elementContainer}>
                 <Image
-                    style={ArticlesElementStyle.elementImageContainer}
-                    source={{uri: 'https://cloudpos.uz/image/cache/catalog/kolco2-228x228.png'}}
+                    style={BasketElementStyle.elementImageContainer}
+                    source={{uri: this.props.content.image}}
                 />
-                <View style={ArticlesElementStyle.elementIconContainer}>
+                <View style={BasketElementStyle.elementIconContainer}>
 
                 </View>
-                <View style={ArticlesElementStyle.elementTitleContainer}>
-                    <Text style={ArticlesElementStyle.elementTitleText}>Обручальное кольцо, Женское, 3 гр, Серебро, 925, Размер 16, Вставка Цианит
-                    </Text>
-                    <Text style={ArticlesElementStyle.elementTitleText}>
-                        Арт: 219109292
-                    </Text>
-                </View>
-                <View style={ArticlesElementStyle.elementDescriptionContainer}>
-                    <Text style={ArticlesElementStyle.elementDescriptionText}>3 гр.</Text>
-                    <Text style={ArticlesElementStyle.elementDescriptionText}>1.250.000 сум.</Text>
-                    <Text style={ArticlesElementStyle.elementDescriptionText}>0 шт.</Text>
+                <View style={BasketElementStyle.elementTitleContainer}>
+                    <Text style={BasketElementStyle.elementTitleText}>{this.props.content.product_description[0].name}, {this.props.content.product_attributes.attributes ? this.props.content.product_attributes.attributes[12] ?this.props.content.product_attributes.attributes[12][2].text: '': ''}
 
+                        {
+                            this.props.content.product_attributes.attributes ?
+                                this.props.content.product_attributes.attributes[14] ?
+                                    this.props.content.product_attributes.attributes[14][2]?
+                                        this.props.content.product_attributes.attributes[14][2].name ?
+                                            this.props.content.product_attributes.attributes[14][2].name :
+                                            false : false: false : false
+                        }
+
+                        {
+                            this.props.content.product_attributes.attributes ?
+                                this.props.content.product_attributes.attributes[14] ?
+                                    this.props.content.product_attributes.attributes[14][2]?
+                                        this.props.content.product_attributes.attributes[14][2].text ?
+                                            this.props.content.product_attributes.attributes[14][2].text :
+                                            false : false: false : false
+                        }
+                    </Text>
+                    <Text style={BasketElementStyle.elementTitleTextBold}>
+                        Артикул:
+                        <Text style={BasketElementStyle.elementTitleText}> {this.props.content.sku}</Text>
+                    </Text>
+                    <Text style={BasketElementStyle.elementTitleTextBold}>
+                        Цена:
+                        <Text style={BasketElementStyle.elementTitleText}> {this.props.content.price_formated}</Text>
+                    </Text>
+                    <Text style={BasketElementStyle.elementTitleTextBold}>
+                        Наличие:
+                        <Text style={BasketElementStyle.elementTitleText}> {this.props.content.quantity} шт.</Text>
+                    </Text>
                 </View>
+
+                <TouchableOpacity style={BasketElementStyle.elementDescriptionContainer}
+                onPress={()=>{
+                    // this.props.callback(this.props.index, this.props.navigation)
+this.props.deleteSale(this.props.content.id)
+                    DeleteBasket(this.props.index)
+
+                }}
+                >
+                    <Icon
+                        type='ionicon'
+                        name='ios-trash'
+                        size={40}
+                    />
+
+                </TouchableOpacity>
             </View>
         )
 

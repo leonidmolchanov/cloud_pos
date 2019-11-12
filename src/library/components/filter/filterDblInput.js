@@ -1,10 +1,10 @@
 import React from "react";
-import {TouchableOpacity, Image, View} from 'react-native'
+import {TouchableOpacity, Image, View, Text} from 'react-native'
 import {FilterIcon} from "../../icons";
-import {FilterStyle} from "../../../styles";
+import {FilterDblInputStyle} from "../../../styles";
 import { Button, Input, SegmentedControlButton, Switcher } from 'nachos-ui'
 
-export  class FilterTopMenu extends React.Component {
+export  class FilterDblInput extends React.Component {
     constructor(props) {
         super(props);
         this.state={
@@ -14,15 +14,28 @@ export  class FilterTopMenu extends React.Component {
 
     render() {
         return (
-            <Switcher
-                // onChange={valueOne => this.setState({ valueOne })}
-                defaultSelected={this.state.flterType}
-            >
-                <SegmentedControlButton textStyle={{color:'#666'}} style={{ borderColor:'#ccc'}} value='По категориям' text='По категориям' />
-                <SegmentedControlButton textStyle={{color:'#666'}} style={{ borderColor:'#ccc'}} value='По товарам' text='По товарам' />
-                <SegmentedControlButton textStyle={{color:'#666'}} style={{ borderColor:'#ccc'}} value='По комплектам' text='По комплектам' />
+            <View style={FilterDblInputStyle.container}>
+                <View style={FilterDblInputStyle.headContainer}>
+                    <Text style={FilterDblInputStyle.headLabelText}>{this.props.title}</Text>
+                </View>
+                <View style={FilterDblInputStyle.bodyContainer}>
+                    <View style={FilterDblInputStyle.bodyLeftContainer}>
+                        <Input inputStyle={FilterDblInputStyle.bodyLeftContainerInputStyle}
+                               placeholder={this.props.placeholderLeft}
+                               value={this.props.min ? this.props.min : ''}
+                               onChangeText={(text) => this.props.setFilter(this.props.typeMin, text)}
+                        />
+                    </View>
+                    <View style={FilterDblInputStyle.bodyRightContainer}>
+                        <Input
+                            value={this.props.max ? this.props.max : ''}
+                            placeholder={this.props.placeholderRight}
+                            onChangeText={(text) => this.props.setFilter(this.props.typeMax, text)}
+                        />
+                    </View>
+                </View>
 
-            </Switcher>
+            </View>
         )
 
     }

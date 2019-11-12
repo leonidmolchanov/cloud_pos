@@ -2,7 +2,7 @@
 import {LoginSubmit, SubmitButton} from './login/submitButton.component'
 import {Filter} from './filter'
 import {ArticleElement} from './articles/articleElement'
-import {Inform} from "./inform";
+import Inform from "./inform";
 import {FilterTopMenu} from  './filter/filterTopMenu'
 import {FilterDblInput} from './filter/filterDblInput'
 import {FilterSelect} from "./filter/filterSelect";
@@ -19,6 +19,8 @@ import {CheckoutBottomMenu} from "./checkout/checkoutBottomMenu"
 import {SalesElement} from "./sales/salesElement";
 import {LoginHeader} from "./login/header.component"
 import {LoginInput} from "./login/input.component";
+import {UserAddOneInput} from "./userAdd/filterOneInput";
+import {UserAddSubmitButtonPage} from "./userAdd/addUserSubmitButton";
 export {
     SubmitButton,
     Filter,
@@ -40,5 +42,7 @@ export {
     SalesElement,
     LoginHeader,
     LoginInput,
-    LoginSubmit
+    LoginSubmit,
+    UserAddOneInput,
+    UserAddSubmitButtonPage
 }

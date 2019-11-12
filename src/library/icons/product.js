@@ -1,17 +1,23 @@
 import React from "react";
 import {Svg} from 'expo';
 
-export class CircleIcon extends React.Component {
+export class ProductIcon extends React.Component {
     render() {
         return (
-            <Svg height={this.props.height} width={this.props.width}>
-                <Svg.Circle
+            <Svg height={this.props.height} width={this.props.width} viewBox={this.props.viewBox}>
 
-                    cx={10}
-                    cy={10}
-                    r={6}
-                    fill={this.props.fill}
-                />
+                <Svg.Rect  height={8} width={30} x={6} y={13}
+                           fill='none'
+                           stroke={this.props.fill}
+                           strokeWidth={2}/>
+                <Svg.Rect  height={20} width={26} x={8} y={21}
+                           fill='none'
+                           stroke={this.props.fill}
+                           strokeWidth={2}/>
+                <Svg.Rect  height={4} width={14} x={14} y={27}
+                           fill='none'
+                           stroke={this.props.fill}
+                           strokeWidth={2}/>
             </Svg>
         )
 

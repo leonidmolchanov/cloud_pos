@@ -2,8 +2,8 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 
-export const FilterStyle = EStyleSheet.create({
-    filterContainer: {
+export const InformStyle = EStyleSheet.create({
+    informContainer: {
 
         alignItems: 'flex-start',
         width:'100%',
@@ -11,18 +11,26 @@ export const FilterStyle = EStyleSheet.create({
         justifyContent: 'flex-start',
         flexDirection:'row'
     },
-    filterInputContainer: {
-        alignItems: 'center',
-        width:'90%',
+    informLeftContainer: {
+        alignItems: 'flex-start',
+        width:'40%',
         height:'100%',
         justifyContent: 'center',
     },
-    filterIconContainer: {
-        alignItems: 'center',
-        width:'10%',
+    informRightContainer: {
+        alignItems: 'flex-end',
+        width:'60%',
         height:'100%',
         justifyContent: 'center',
     },
-
+    informLeftText: {
+        fontWeight:'bold'
+    },
+    informRightText: {
+        fontWeight:'bold'
+    },
+    informBandleStyle:{
+        left: -'1.4rem'
+    }
 
 });

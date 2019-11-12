@@ -2,7 +2,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 import {LoginSubmitButton} from './components/loginSubmitButton'
 import {LoginUserInput} from './components/loginUserInput'
-import {tabBarOptions} from './navigator/navigatorOptions'
+import {tabBarOptions, tabBarOptionsHide} from './navigator/navigatorOptions'
 import {HeaderStyle} from './components/header'
 import {articlesPage} from './screens/articles'
 import {catalogPage} from  './screens/catalog'
@@ -24,7 +24,9 @@ import {SalesPage} from "./screens/sales"
 import {SalesElementStyle} from "./components/salesElement";
 import {checkoutPage} from "./screens/checkout";
 import {loginPage} from "./screens/login";
-
+import {MorePage} from "./screens/more";
+import {UserAddOneInputStyle} from './components/userAddOneInput';
+import {AddUserSubmitButton} from './components/addUserSubmitButton'
 export {
     LoginSubmitButton,
     LoginUserInput,
@@ -49,5 +51,9 @@ export {
     CheckoutElementStyle,
     SalesPage,
     SalesElementStyle,
-    loginPage
+    loginPage,
+    MorePage,
+    UserAddOneInputStyle,
+    AddUserSubmitButton,
+    tabBarOptionsHide
 }

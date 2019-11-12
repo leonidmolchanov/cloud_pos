@@ -1,12 +1,12 @@
 // import {StyleSheet} from "react-native";
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-export const ArticlesElementStyle = EStyleSheet.create({
+export const SalesElementStyle = EStyleSheet.create({
     elementContainer: {
 
         alignItems: 'flex-start',
         width:'100%',
-        height:120,
+        height:'8.4rem',
         justifyContent: 'flex-start',
         flexDirection:'row',
         margin:0
@@ -19,7 +19,7 @@ export const ArticlesElementStyle = EStyleSheet.create({
     },
     elementTitleContainer: {
         alignItems: 'flex-start',
-        width:'45%',
+        width:'90%',
         height:'100%',
     },
     elementDescriptionContainer: {
@@ -28,15 +28,17 @@ export const ArticlesElementStyle = EStyleSheet.create({
         height:'100%',
     },
     elementTitleText: {
-        fontSize:15
+        fontSize:'0.9rem'
     },
     elementDescriptionText: {
-        fontSize:16
+        fontSize:'0.9rem'
     },
     elementImageContainer: {
         alignItems:'center',
         justifyContent: 'center',
-        width: 50,
-        height: 50
+        width: '3.5rem',
+        height: '3.5rem',
+        marginRight:'0.7rem',
+
     }
 });

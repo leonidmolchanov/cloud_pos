@@ -1,20 +1,22 @@
 // import {StyleSheet} from "react-native";
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-export const BasketSelectStyle = EStyleSheet.create({
+export const BasketContentStyle = EStyleSheet.create({
     container: {
-        width:'100%',
-        height:40,
-        marginBottom:20,
-        alignSelf:'flex-start'
+        width:'100%', flexDirection:'row'
     },
-    headContainer: {
-        width:'100%',
-        height:'40%'
+    leftContainer: {
+        width:'50%'
     },
-    headLabelText: {
+    rightContainer: {
+        width:'50%'
+    },
+    leftLabelText: {
         fontWeight:'bold',
-        color:'#666'
+
+    },
+    rightLabelText: {
+        fontWeight:'bold',
 
     }
 

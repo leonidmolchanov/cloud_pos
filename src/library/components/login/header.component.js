@@ -1,22 +1,34 @@
-// import {StyleSheet} from "react-native";
+import React from "react";
+import {Text, View} from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet';
+import {Svg} from 'expo';
+import {loginHeaderStyle} from "../../../styles/components/loginHeader";
 
-export const LoginSubmitButton = EStyleSheet.create({
-    container: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '11.88rem',
-        height: '2.938rem',
-        backgroundColor: '#666666',
-        borderColor: '#666666',
-        borderWidth: 1,
-        borderRadius: '1.875rem',
-        marginTop: '1.25rem'
-    },
-    labelText: {
-        fontWeight: 'bold',
-        color: '#fff',
-        fontSize: '1.063rem'
+export  class LoginHeader extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <View style={loginHeaderStyle.container}>
+
+                <View style={loginHeaderStyle.iconContainer}>
+                    <Svg height={5*EStyleSheet.value('$remJsx')} width={5*EStyleSheet.value('$remJsx')}>
+                        <Svg.Circle
+
+                            cx={2*EStyleSheet.value('$remJsx')}
+                            cy={2*EStyleSheet.value('$remJsx')}
+                            r={2*EStyleSheet.value('$remJsx')}
+                            fill={'rgb(10,80,155)'}
+                        />
+                    </Svg>
+                </View>
+                <View style={loginHeaderStyle.textContainer}>
+                    <Text style={loginHeaderStyle.textLabel}>CloudPos</Text>
+                </View>
+            </View>
+        )
 
     }
-});
+}

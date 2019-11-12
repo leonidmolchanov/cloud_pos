@@ -6,7 +6,7 @@ import { Button } from 'nachos-ui'
 
 
 
-export default class Articles extends React.Component {
+export default class Documents extends React.Component {
     render() {
         return (
             <View style={styles.container}>

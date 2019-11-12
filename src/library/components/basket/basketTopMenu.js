@@ -4,7 +4,7 @@ import {FilterIcon} from "../../icons";
 import {FilterStyle} from "../../../styles";
 import { Button, Input, SegmentedControlButton, Switcher } from 'nachos-ui'
 
-export  class FilterTopMenu extends React.Component {
+export  class BasketTopMenu extends React.Component {
     constructor(props) {
         super(props);
         this.state={
@@ -14,13 +14,12 @@ export  class FilterTopMenu extends React.Component {
 
     render() {
         return (
-            <Switcher style={{paddingTop:10}}
-                // onChange={valueOne => this.setState({ valueOne })}
+            <Switcher style={{paddingTop:0}}
+                onChange={valueOne => {this.props.callback(valueOne)}}
                 defaultSelected={this.state.flterType}
             >
-                <SegmentedControlButton textStyle={{color:'#666'}} style={{ borderColor:'#ccc'}} value='По категориям' text='По категориям' />
-                <SegmentedControlButton textStyle={{color:'#666'}} style={{ borderColor:'#ccc'}} value='По товарам' text='По товарам' />
-                <SegmentedControlButton textStyle={{color:'#666'}} style={{ borderColor:'#ccc'}} value='По комплектам' text='По комплектам' />
+                <SegmentedControlButton textStyle={{color:'#666'}} style={{ borderColor:'#ccc'}} value='Корзина' text='Корзина' />
+                <SegmentedControlButton textStyle={{color:'#666'}} style={{ borderColor:'#ccc'}} value='Оплата' text='Оплата' />
 
             </Switcher>
         )

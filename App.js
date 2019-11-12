@@ -1,12 +1,12 @@
 import React from 'react';
 import Login from './src/screens/login'
-import {Dimensions} from 'react-native';
+import {Dimensions, AsyncStorage} from 'react-native';
 import {Font, Permissions} from 'expo';
 import Nav from './src/screens'
-
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { ThemeProvider } from "nachos-ui";
-
+import store from './src/store'
+import {Provider} from 'react-redux';
 
 
 // define REM depending on screen width
@@ -37,8 +37,20 @@ constructor(props){
         token:false
     }
 }
+logOut= async()=>{
+    await AsyncStorage.removeItem('address', (err, result) => {
+
+    });
+    await AsyncStorage.removeItem('phone', (err, result) => {
+
+    });
+    await AsyncStorage.removeItem('password', (err, result) => {
+
+    });
+    this.setState({auth:false,
+    token:false})
+}
 auth=(token, address)=>{
-    console.log(token)
     this.setState({auth:true,
     token:token,
     address:address})
@@ -58,9 +70,12 @@ auth=(token, address)=>{
     return (
         this.state.loading ?
             this.state.auth ?
+<Provider store={store}>
                 <ThemeProvider>
-                    <Nav address={this.state.address} token={this.state.token} />
+                    <Nav logOut={this.logOut} address={this.state.address} token={this.state.token} />
                 </ThemeProvider>
+</Provider>
+
                 :
                 <Login callback={this.auth}/>
             :

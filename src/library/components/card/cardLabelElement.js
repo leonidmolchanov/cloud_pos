@@ -4,34 +4,18 @@ import {FilterIcon} from "../../icons";
 import {ArticlesElementStyle} from "../../../styles";
 import { Button, Input } from 'nachos-ui'
 
-export  class ArticleElement extends React.Component {
+export  class CardLabelElement extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <View style={ArticlesElementStyle.elementContainer}>
-                <Image
-                    style={ArticlesElementStyle.elementImageContainer}
-                    source={require('./../../images/folder.png')}
-                />
-                <View style={ArticlesElementStyle.elementIconContainer}>
+            <View style={{width:'100%', backgroundColor:'#fff', flexDirection:'row', paddingTop:5, paddingBottom:5}}>
+                <Text style={{fontWeight:'bold', paddingLeft:10, paddingRight:10}}>
+                    {this.props.title}: {' '}
+                    <Text style={{fontWeight:'normal'}}>{this.props.body}</Text></Text>
 
-                </View>
-                <View style={ArticlesElementStyle.elementTitleContainer}>
-                    <Text style={ArticlesElementStyle.elementTitleText}>Обручальное кольцо, Женское, 3 гр, Серебро, 925, Размер 16, Вставка Цианит
-                    </Text>
-                    <Text style={ArticlesElementStyle.elementTitleText}>
-                        Арт: 219109292
-                    </Text>
-                </View>
-                <View style={ArticlesElementStyle.elementDescriptionContainer}>
-                    <Text style={ArticlesElementStyle.elementDescriptionText}>3 гр.</Text>
-                    <Text style={ArticlesElementStyle.elementDescriptionText}>1.250.000 сум.</Text>
-                    <Text style={ArticlesElementStyle.elementDescriptionText}>0 шт.</Text>
-
-                </View>
             </View>
         )
 

@@ -1,13 +1,13 @@
 // import {StyleSheet} from "react-native";
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-export const LoginSubmitButton = EStyleSheet.create({
+export const FilterSubmitButton = EStyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: '18.88rem',
-        height: '4.538rem',
-        backgroundColor: 'rgb(46, 184, 70)',
+        width: '22.88rem',
+        height: '3.538rem',
+        backgroundColor: 'rgb(96, 132, 228)',
         borderColor: 'rgb(125, 125, 125)',
         borderWidth: 1,
         borderRadius: '0.55rem',
@@ -16,7 +16,7 @@ export const LoginSubmitButton = EStyleSheet.create({
     labelText: {
         fontWeight: 'bold',
         color: '#fff',
-        fontSize: '1.563rem'
+        fontSize: '1.063rem'
 
     }
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput,AsyncStorage } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput,AsyncStorage , KeyboardAvoidingView} from 'react-native';
 import {LoginSubmitButton, LoginUserInput, loginPage} from "../../styles";
 import {Svg} from 'expo';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -77,7 +77,7 @@ export default class Login extends React.Component {
             username:phone,
             password:password
         }
-        fetch(address+'/index.php?route=rest/admin_security/login', {method: 'POST',body:JSON.stringify(body),headers:{
+        fetch('http://'+address+'/index.php?route=rest/admin_security/login', {method: 'POST',body:JSON.stringify(body),headers:{
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }})
@@ -86,7 +86,7 @@ export default class Login extends React.Component {
                     if(JSON.parse(response._bodyInit)){
                        let content = JSON.parse(response._bodyInit)
 if(content.success==1){
-    fetch(address+'/index.php?route=rest/admin_security/authed',
+    fetch('http://'+address+'/index.php?route=rest/admin_security/authed',
         {method: 'POST',body:JSON.stringify({session:content.data.session}),headers:{
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -132,7 +132,7 @@ console.log(err)
 
     render() {
         return (
-            <View style={loginPage.container}>
+            <KeyboardAvoidingView style={loginPage.containerSwipe} keyboardVerticalOffset={-80} contentContainerStyle={loginPage.containerSwipe} behavior="position" enabled>
                 <View style={loginPage.headerContainer}>
                   <LoginHeader />
                 </View>
@@ -153,7 +153,8 @@ console.log(err)
                 <View style={loginPage.footerContainer}>
                     <Text>www.cloudpos.uz</Text>
                 </View>
-            </View>
+
+            </KeyboardAvoidingView>
         );
     }
 }

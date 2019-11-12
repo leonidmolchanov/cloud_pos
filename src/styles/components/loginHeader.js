@@ -1,42 +1,26 @@
 // import {StyleSheet} from "react-native";
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-export const ArticlesElementStyle = EStyleSheet.create({
-    elementContainer: {
-
-        alignItems: 'flex-start',
-        width:'100%',
-        height:120,
-        justifyContent: 'flex-start',
-        flexDirection:'row',
-        margin:0
-    },
-    elementIconContainer: {
+export const loginHeaderStyle = EStyleSheet.create({
+    container:{
+        flex: 2,
+        width: '100%',
         alignItems: 'center',
-        width:'5%',
-        height:'100%',
         justifyContent: 'center',
+        flexDirection: 'row',
     },
-    elementTitleContainer: {
-        alignItems: 'flex-start',
-        width:'45%',
-        height:'100%',
-    },
-    elementDescriptionContainer: {
-        alignItems: 'flex-end',
-        width:'35%',
-        height:'100%',
-    },
-    elementTitleText: {
-        fontSize:15
-    },
-    elementDescriptionText: {
-        fontSize:16
-    },
-    elementImageContainer: {
-        alignItems:'center',
+    iconContainer: {
+        flex: 2,
+        width: '100%',
+        alignItems: 'center',
         justifyContent: 'center',
-        width: 50,
-        height: 50
+        flexDirection: 'row',
+    },
+    textContainer: {
+        width:'60%'
+    },
+   textLabel: {
+       fontFamily: 'lobster',
+       fontSize: '2.363rem'
     }
 });

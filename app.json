@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "stekMobileApp",
-    "slug": "stekMobileApp",
+    "name": "cloudPos",
+    "slug": "cloudPos",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -23,7 +23,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "uz.cloudpos.app"
+
+    },
+    "android": {
+      "package": "uz.cloudpos.app"
     }
   }
 }

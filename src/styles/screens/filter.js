@@ -2,7 +2,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import {Platform} from 'react-native';
 
 
-export const articlesPage = EStyleSheet.create({
+export const FilterPage = EStyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'rgb(223, 223, 223)',
@@ -90,6 +90,11 @@ export const articlesPage = EStyleSheet.create({
     },
     ScrollViewStyle:{
         paddingTop:10,
-        width:'100%'
-    }
+        width:'100%',
+        height: '100%'
+    },
+    nullView:{width:'100%',
+        height:60,
+        paddingTop:20,
+        alignItems:'center'}
 });

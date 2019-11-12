@@ -1,14 +1,14 @@
 import React from "react";
 import {Svg} from 'expo';
 
-export class DownloadIcon extends React.Component {
+export class UploadIcon extends React.Component {
     render() {
         return (
-            <Svg height={this.props.height} width={this.props.width}>
+            <Svg height={this.props.height} width={this.props.width} >
 
                 <Svg.Polyline
                     fill="none"
-                    points="33,27 25,35 17,27   "
+                    points="17,10 25,2 33,10   "
                     stroke="#000000"
                     strokeLinecap="round"
                     strokeMiterlimit="10"
@@ -23,8 +23,8 @@ export class DownloadIcon extends React.Component {
                     strokeWidth={2}
                     x1={25}
                     x2={25}
-                    y1={2}
-                    y2={33}/>
+                    y1={33}
+                    y2={2}/>
 
                 <Svg.Rect
                     fill="none"

@@ -18,7 +18,12 @@ import {ImgIcon} from "./imgIcon";
 import {MicIcon} from "./micIcon";
 import {PhotoIcon} from "./photoIcon";
 import {TextIcon} from "./textIcon";
-
+import {FilterIcon} from './filter'
+import {MoreIcon} from './more';
+import {DownloadIcon} from './download';
+import {UploadIcon} from "./upload";
+import {ReportIcon} from "./report";
+import {ProductIcon} from "./product";
 export {
     UserIcon,
     BackIcon,
@@ -39,6 +44,11 @@ export {
     ImgIcon,
     MicIcon,
     PhotoIcon,
-    TextIcon
-
+    TextIcon,
+    FilterIcon,
+    MoreIcon,
+    DownloadIcon,
+    UploadIcon,
+    ReportIcon,
+    ProductIcon
 }

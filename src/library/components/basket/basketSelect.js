@@ -1,7 +1,7 @@
 import React from "react";
 import {TouchableOpacity, Image, View, Text, StyleSheet} from 'react-native'
 import {FilterIcon} from "../../icons";
-import {FilterSelectStyle} from "../../../styles";
+import {BasketSelectStyle} from "../../../styles";
 import { Button, Input, SegmentedControlButton, Switcher } from 'nachos-ui'
 import RNPickerSelect from 'react-native-picker-select';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,8 +19,12 @@ const sports = [
         value: 'hockey',
     },
 ];
-
-export  class FilterSelect extends React.Component {
+const placeholder = {
+    label: 'Select a sport...',
+    value: null,
+    color: '#9EA0A4',
+};
+export  class BasketSelect extends React.Component {
     constructor(props) {
         super(props);
         this.state={
@@ -30,11 +34,11 @@ export  class FilterSelect extends React.Component {
 
     render() {
         return (
-            <View style={FilterSelectStyle.container}>
-                <View style={FilterSelectStyle.headContainer}>
-                    <Text style={FilterSelectStyle.headLabelText}>{this.props.title}</Text>
+            <View style={BasketSelectStyle.container}>
+                <View style={BasketSelectStyle.headContainer}>
+                    <Text style={BasketSelectStyle.headLabelText}>{this.props.title}</Text>
                 </View>
-                <View style={FilterSelectStyle.bodyContainer}>
+                <View style={BasketSelectStyle.bodyContainer}>
                     <RNPickerSelect
                         placeholder={{label:this.props.placeholderText}}
                         items={sports}
@@ -95,8 +99,3 @@ const pickerSelectStyles = StyleSheet.create({
         paddingRight: 30, // to ensure the text is never behind the icon
     },
 });
-const placeholder = {
-    label: 'Select a sport...',
-    value: null,
-    color: '#9EA0A4',
-};

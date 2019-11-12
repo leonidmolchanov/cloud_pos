@@ -2,7 +2,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import {Platform} from 'react-native';
 
 
-export const basketPage = EStyleSheet.create({
+export const checkoutPage = EStyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'rgb(223, 223, 223)',
@@ -17,6 +17,7 @@ export const basketPage = EStyleSheet.create({
         width:'94%',
         height:'90%',
         justifyContent: 'flex-start',
+
     },
     filterContainer: {
 
@@ -98,5 +99,11 @@ export const basketPage = EStyleSheet.create({
     ScrollViewStyle:{
         paddingTop:10,
         width:'100%'
+    },
+    userFont:{
+        fontSize:'1rem',
+        margin:'0.5rem',
+        color: 'rgb(80,80,80)'
+
     }
 });

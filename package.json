@@ -19,7 +19,7 @@
     "react-native-firebase": "^5.2.3",
     "react-native-icons": "^0.7.1",
     "react-native-picker-select": "^6.1.0",
-    "react-native-reanimated": "^1.0.0",
+    "react-native-reanimated": "^2.10.0",
     "react-native-rem-stylesheet": "^0.1.0",
     "react-native-select-input-ios": "^2.0.2",
     "react-native-svg": "^9.3.7",
